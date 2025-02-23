@@ -44,6 +44,11 @@ end
 if CLIENT then
     function SWEP:AddToSettingsMenu(parent)
         local form = vgui.CreateTTT2Form(parent, "header_equipment_additional")
+
+        form:MakeHelp({
+            label = "label_id_swap_grenate_reset_timer_help"
+        })
+
         form:MakeSlider({
             label = "label_id_swap_grenade_reset_timer_length",
             serverConvar = self.cvars.reset_timer:GetName(),
