@@ -1,6 +1,8 @@
 # Identity Swap Grenade for TTT2
 
-This is a gmod addon that adds a grenade that swaps peoples identities.
+This is a GMod addon that adds a grenade that swaps peoples identities in TTT2.
+
+This requires TTT2 and the Identity Disguiser for TTT2, both of which can be found on the steam workshop or on github.
 
 ## Notes
 
