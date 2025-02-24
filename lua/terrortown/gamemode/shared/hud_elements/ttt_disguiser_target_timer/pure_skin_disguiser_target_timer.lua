@@ -27,7 +27,7 @@ if CLIENT then
 
     -- parameter overwrites
     function HUDELEMENT:IsResizable()
-        return true, true
+        return false, false
     end
     -- parameter overwrites end
 
@@ -97,7 +97,7 @@ if CLIENT then
         end
 
         local time_remaining = {
-            timeremaining = util.NiceFloat(math.ceil(client.id_timer - CurTime()))
+            timeremaining = util.NiceFloat(math.ceil(client.id_timer - UnPredictedCurTime()))
         }
         self:DrawComponent(LANG.GetParamTranslation("identity_disguiser_hud_timer", time_remaining))
     end

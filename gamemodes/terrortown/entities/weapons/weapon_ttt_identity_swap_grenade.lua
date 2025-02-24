@@ -2,7 +2,7 @@ if SERVER then
     AddCSLuaFile()
 
     -- add any resources here
-    -- resource.AddFile("blah blah blah.vmt")
+    resource.AddFile("materials/vgui/ttt/icon_identity_swap_grenade.vmt")
 end
 
 SWEP.Base = "weapon_tttbasegrenade"
@@ -18,7 +18,7 @@ if CLIENT then
     SWEP.ViewModelFOV = 54
     SWEP.ViewModelFlip = false
 
-    SWEP.Icon = "vgui/ttt/icon_smokegrenade"
+    SWEP.Icon = "vgui/ttt/icon_identity_swap_grenade"
     SWEP.IconLetter = "Q"
 
     SWEP.EquipMenuData = {
@@ -46,7 +46,7 @@ if CLIENT then
         local form = vgui.CreateTTT2Form(parent, "header_equipment_additional")
 
         form:MakeHelp({
-            label = "label_id_swap_grenate_reset_timer_help"
+            label = "label_id_swap_grenade_reset_timer_help"
         })
 
         form:MakeSlider({
