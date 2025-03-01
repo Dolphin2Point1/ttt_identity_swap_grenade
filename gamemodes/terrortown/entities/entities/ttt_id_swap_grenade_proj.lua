@@ -6,6 +6,7 @@ if SERVER then
     util.AddNetworkString("TTT2IdentitySwapGrenadeTimer")
 end
 local reset_timer_length_convar = GetConVar("ttt_id_swap_grenade_reset_timer_length")
+local grenade_radius_convar = GetConVar("ttt_id_swap_grenade_radius")
 
 if SERVER then
     AddCSLuaFile()
@@ -23,7 +24,7 @@ AccessorFunc(ENT, "radius", "Radius", FORCE_NUMBER)
 -- @ignore
 function ENT:Initialize()
     if not self:GetRadius() then
-        self:SetRadius(256)
+        self:SetRadius(grenade_radius_convar:GetFloat())
     end
 
     return BaseClass.Initialize(self)

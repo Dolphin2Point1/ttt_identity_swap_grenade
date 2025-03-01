@@ -11,7 +11,8 @@ SWEP.HoldType = "grenade"
 SWEP.Slot = 6
 SWEP.cvars = {
     reset_timer = CreateConVar("ttt_id_swap_grenade_reset_timer_length", 30, {FCVAR_ARCHIVE, FCVAR_NOTIFY, FCVAR_REPLICATED},
-      "The amount of seconds for someone's identity to be reset after being swapped by an identity swapping grenade. Set to 0 for no reset.", 0)
+      "The amount of seconds for someone's identity to be reset after being swapped by an identity swapping grenade. Set to 0 for no reset.", 0),
+    radius = CreateConVar("ttt_id_swap_grenade_radius", 256, {FCVAR_ARCHIVE, FCVAR_NOTIFY, FCVAR_REPLICATED}, "The radius of the grenade.", 0)
 }
 
 if CLIENT then
@@ -55,6 +56,14 @@ if CLIENT then
             min = 0,
             max = 150,
             decimal = 1,
+        })
+
+        form:MakeSlider({
+            label = "label_id_swap_grenade_radius",
+            serverConvar = self.cvars.radius:GetName(),
+            min = 0,
+            max = 1024,
+            decimal = 0,
         })
     end
 end
