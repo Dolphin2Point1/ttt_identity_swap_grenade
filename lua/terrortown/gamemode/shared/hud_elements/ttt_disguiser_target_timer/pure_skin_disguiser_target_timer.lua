@@ -52,7 +52,7 @@ if CLIENT then
     function HUDELEMENT:ShouldDraw()
         local client = LocalPlayer()
 
-        return HUDEditor.IsEditing or client.id_timer ~= nil
+        return HUDEditor.IsEditing or (client.id_timer ~= nil and client:IsActive())
     end
 
     function HUDELEMENT:PerformLayout()
@@ -84,6 +84,8 @@ if CLIENT then
     end
 
     function HUDELEMENT:Draw()
+        local client = LocalPlayer()
+
         if HUDEditor.IsEditing then
             local time_remaining = {
                 timeremaining = util.NiceFloat(120)
@@ -92,7 +94,7 @@ if CLIENT then
             return
         end
 
-        if client.id_timer == nil then
+        if client.id_timer == nil or not client:IsActive() then
             return
         end
 
